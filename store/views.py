@@ -220,10 +220,7 @@ import requests
 import json
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-<<<<<<< HEAD
 from django.db import connection
-=======
->>>>>>> d0cf1bbed744ff15a6acbf9b3951a34a8d813324
 
 # Initialize environ
 env = environ.Env()
@@ -272,7 +269,6 @@ def nvidia_proxy(request, rest=None):
 
     except Exception as e:
         print(f"CRITICAL ERROR IN NVIDIA PROXY: {str(e)}")
-<<<<<<< HEAD
         return JsonResponse({"error": str(e)}, status=500)
 
 
@@ -291,6 +287,3 @@ def health_check(request):
             "database": "disconnected",
             "error": str(e)
         }, status=500)
-=======
-        return JsonResponse({"error": str(e)}, status=500)
->>>>>>> d0cf1bbed744ff15a6acbf9b3951a34a8d813324

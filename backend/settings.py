@@ -29,12 +29,10 @@ SECRET_KEY = 'django-insecure-w+hy1s*#&)2#hp_mvp=eb%r)4g%jv93e&k4k0h3n0u$(*n-_eb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-<<<<<<< HEAD
-ALLOWED_HOSTS = [".vercel.app', 'localhost', '127.0.0.1", "*"]
+ALLOWED_HOSTS = ['localhost',
+    '127.0.0.1',
+    'gen-ui-backend-ek2v.vercel.app',]
 
-=======
-ALLOWED_HOSTS = ['.vercel.app', 'localhost', '127.0.0.1']
->>>>>>> d0cf1bbed744ff15a6acbf9b3951a34a8d813324
 
 # Application definition
 
@@ -61,14 +59,13 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-CORS_ALLOW_ALL_ORIGINS = False
-
 CORS_ALLOWED_ORIGINS = [
-    "https://gen-ui-frontend.vercel.app", 
     "http://localhost:5173",
+    "https://gen-ui-frontend.vercel.app",  # <-- Frontend goes here (With https://)
 ]
 
 from corsheaders.defaults import default_headers
+
 CORS_ALLOW_HEADERS = [
     "accept",
     "accept-encoding",
@@ -120,12 +117,11 @@ DATABASES = {
         'PASSWORD': os.getenv('DB_PASSWORD'),
         'HOST': os.getenv('DB_HOST'),
         'PORT': os.getenv('DB_PORT'),
+        'OPTIONS': {
+            'sslmode': 'require',
+        },
     }
 }
-
-
-# Password validation
-# https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -143,9 +139,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# Internationalization
-# https://docs.djangoproject.com/en/5.2/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -154,14 +147,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.2/howto/static-files/
-
 STATIC_URL = 'static/'
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
