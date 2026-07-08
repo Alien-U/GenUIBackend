@@ -31,7 +31,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['localhost',
     '127.0.0.1',
-    'gen-ui-backend-ek2v.vercel.app',]
+    'UtkarshDubey.pythonanywhere.com',]
 
 
 # Application definition
