@@ -38,7 +38,7 @@ class PostCreateView(APIView):
 @api_view(['GET'])
 def get_posts(request):
     posts = Post.objects.all()
-    serializer = PostSerializer(posts, many=True)
+    serializer = PostSerializer(posts, many=True, context={'request': request})
     return Response(serializer.data)
 
     
