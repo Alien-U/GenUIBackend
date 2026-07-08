@@ -13,13 +13,16 @@ SECRET_KEY = os.getenv(
     "django-insecure-w+hy1s*#&)2#hp_mvp=eb%r)4g%jv93e&k4k0h3n0u$(*n-_eb",
 )
 
-DEBUG = True
+DEBUG = os.getenv("DEBUG", "True") == "True"
 
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
     "gen-ui-backend-ek2v.vercel.app",
+    "gen-ui-backend-eight.vercel.app",
+    "gen-ui-backend-finv.vercel.app",
     "UtkarshDubey.pythonanywhere.com",
+    ".vercel.app",
 ]
 
 INSTALLED_APPS = [
